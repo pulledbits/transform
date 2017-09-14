@@ -1,0 +1,23 @@
+{
+  "name": "pulledbits/transform",
+  "description": "Implementation of Transform Pattern",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Rik Meijer",
+      "email": "rik@pulledbits.org"
+    }
+  ],
+  "require" : {
+    "php" : ">=7.1"
+  },
+  "require-dev" : {
+    "phpunit/phpunit" : "~5"
+  },
+  "autoload" : {
+    "psr-4" : {
+      "pulledbits\\Transform\\" : "src"
+    }
+  }
+}
