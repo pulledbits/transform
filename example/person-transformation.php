@@ -23,8 +23,11 @@ class Person implements \pulledbits\Transform\Transformable
 }
 
 class PersonHTMLData extends \pulledbits\Transform\Struct {
-    protected $firstname;
-    protected $lastname;
+
+    public function __construct()
+    {
+        parent::__construct('firstname', 'lastname');
+    }
 
     public function map(string $identifier, $value) {
         $this->$identifier = $value;

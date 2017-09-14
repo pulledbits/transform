@@ -2,13 +2,24 @@
 
 namespace pulledbits\Transform;
 
-abstract class Struct
+class Struct
 {
-    public function __get(string $identifier) {
+    private $data;
+
+    public function __construct()
+    {
+        $this->data = func_get_args();
+    }
+
+    final public function __get(string $identifier) {
         return $this->$identifier;
     }
-    public function __set(string $identifier, $value) {
-        $this->map($identifier, $value);
+
+    final public function __set(string $property, $value) {
+        $this->$property = $value;
     }
-    abstract public function map(string $identifier, $value);
+
+    public function map(string $identifier, $value) {
+        $this->__set($identifier, $value);
+    }
 }
