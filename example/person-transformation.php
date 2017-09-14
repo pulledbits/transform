@@ -30,7 +30,7 @@ class PersonHTMLData extends \pulledbits\Transform\Struct {
     }
 
     public function map(string $identifier, $value) {
-        $this->$identifier = $value;
+        $this->$identifier = ucfirst($value);
     }
 }
 
@@ -42,7 +42,7 @@ class PersonHTMLTransformation
 
 }
 
-$person = new Person("John", "Doo");
+$person = new Person("john", "doo");
 $htmldata = new PersonHTMLData();
 $person->transformTo($htmldata);
 
